@@ -2,7 +2,7 @@
 
 To learn more about data structures and algorithms I will be completing the following guided project tutorial:
 
--   [Tweet Generator: Data Structures & Probability with Python](http://make.sc/oa-tweet-generator) 
+-   [Tweet Generator: Data Structures & Probability with Python](http://make.sc/oa-tweet-generator)
 
 ## What will I be doing:
 - Using a Python script to randomly generate words from a dictionary.
@@ -15,7 +15,8 @@ To learn more about data structures and algorithms I will be completing the foll
 
 ## ToDo:
 - [ ] Find data sources such as books, articles that you want to use for your Tweeta Generator
-- [ ] Page 1: Let's Get Started
+- [x] Page 1: Let's Get Started
+- [ ] Develop Where To Go From Here Challenges
 - [ ] Page 2: Random Dictionary Words
 - [ ] Develop Bonus challenges
 - [ ] Check out Python resources
