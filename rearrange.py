@@ -10,12 +10,10 @@ def rearrange_words():
         # pair random index with list
         rand_index = random.randint(0, len(words) -1)
         word = words[w]
-        # print(word)
         # remove element from list
         word_taken_out = words.pop(rand_index)
         # add element to the end of the list
         words.append(word_taken_out)
-        # return list.join' '
         return ' '.join(words)
 
 print(rearrange_words())

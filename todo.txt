@@ -9,3 +9,6 @@ implement sampling methods and Markov chains on data sets
 - implement data structures including linked lists, hash tables, stacks, queues and heaps (lists are just like arrays)
 - parse text documents and store information in data structures (let's say you have a doc with a list of words, once you access the file with its name you have to you .read() to read over it and .split to get one line of words I think, this idea was generated from past memories of the Spaceman project)
 implement sampling methods and Markov chains on data sets (methods are functions within a class or object(in JS))
+-----------------------------------------------------------
+The Unix operating systems is not only multitasking but also multi-user:
+http://linuxcommand.org/lc3_lts0090.php
