@@ -12,3 +12,5 @@ implement sampling methods and Markov chains on data sets (methods are functions
 -----------------------------------------------------------
 The Unix operating systems is not only multitasking but also multi-user:
 http://linuxcommand.org/lc3_lts0090.php
+-----------------------------------------------------------
+Idea for Random Dictionary Words
