@@ -37,6 +37,23 @@ def unique_words(histogram):
             # print('Duplicate')
     return counter
 
-# def frequency():
+"""
+A frequency() function that takes a word and histogram argument and returns the number of times that word appears in a text. For example, when given the word "mystery" and the Holmes histogram, it will return the integer 20.
+"""
 
-print(unique_words(histogram(source_text)))
+def frequency(word, histogram):
+    counter = 0
+    # loop through dict
+    for k,v in histogram.items():
+        print(f"This should be a word. It is {k}")
+        print(f"{v}")
+        #check if the word is the same as the source word and that the key's value is more than one
+        if word == k and v > 1:
+            # print(f"This should be a word that repeats in the source text. It is {k}")
+            # increment counter by key's value
+            counter += v
+    return counter
+
+
+# print(unique_words(histogram(source_text)))
+# print(frequency('fish', histogram(source_text)))
