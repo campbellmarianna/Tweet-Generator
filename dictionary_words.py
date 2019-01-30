@@ -30,13 +30,6 @@ def get_rand_int_of_words():
     return words_list
         # f_word = f.readline()
 
-# def clean_list():
-#     clean_list = []
-#     words_list = get_rand_int_of_words()
-#     for word in range(0, words_list):
-#         new_word = word.rstrip('\n')
-#         clean_list.append(new_word)
-#     return clean_list
 
 def put_in_sentence():
     clean_list = []

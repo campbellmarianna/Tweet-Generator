@@ -17,7 +17,7 @@ To learn more about data structures and algorithms I will be completing the foll
 - [ ] Find data sources such as books, articles that you want to use for your Tweeta Generator
 - [x] Page 1: Let's Get Started
 - [ ] Develop Where To Go From Here Challenges
-- [ ] Page 2: Random Dictionary Words
+- [x] Page 2: Random Dictionary Words
 - [ ] Develop Bonus challenges
 - [ ] Check out Python resources
 - [ ] Page 3: Analyze Word Frequency in Text

@@ -13,4 +13,15 @@ implement sampling methods and Markov chains on data sets (methods are functions
 The Unix operating systems is not only multitasking but also multi-user:
 http://linuxcommand.org/lc3_lts0090.php
 -----------------------------------------------------------
-Idea for Random Dictionary Words
+Idea for Random Dictionary Words - add a sanitize function
+# def clean_list():
+#     clean_list = []
+#     words_list = get_rand_int_of_words()
+#     for word in range(0, words_list):
+#         new_word = word.rstrip('\n')
+#         clean_list.append(new_word)
+#     return clean_list
+-----------------------------------------------------------
+Plain text sources:
+1) http://www.academia.edu/3216604/Biblical_Principles_for_a_Christian_Engineering_Entrepreneur
+2) https://archive.org/stream/ost-chemistry-environmental-chemistry/Environmental%20Chemistry_djvu.txt
