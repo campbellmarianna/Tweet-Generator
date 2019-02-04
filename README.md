@@ -14,7 +14,7 @@ To learn more about data structures and algorithms I will be completing the foll
 
 
 ## ToDo:
-- [ ] Find data sources such as books, articles that you want to use for your Tweeta Generator
+- [x] Find data sources such as books, articles that you want to use for your Tweeta Generator
 - [x] Page 1: Let's Get Started
 - [ ] Develop Where To Go From Here Challenges
 - [x] Page 2: Random Dictionary Words
