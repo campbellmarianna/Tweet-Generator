@@ -6,9 +6,7 @@ source_text = "one fish two fish red fish blue fish"
 def histogram(source_text):
     histogram = dict() #Issue: histogram scoped to this function - might need to be global
     words_list = source_text.split(" ")
-    # print(words_list)
     for word in words_list:
-        # print(f"A word from source text: {word}")
         if word not in histogram:
             # append word to histogram
             histogram[word] = 0
@@ -29,13 +27,11 @@ def automate_sample(histogram): # create function automate_test
     hist_list = list() # create a hist_list
     while counter > 0: # create a while loop with condition counter > 0
         word = non_uniform_sample(histogram)
-        # print(f"Word: {word}")
         found = False
         if len(hist_list) == 0:
             hist_list.append([word, 1]) # append returning value to hist_list
         else: # do hist_logic
             for inner_list in hist_list: # loop through hist_list
-                # print(f"Inner list: {inner_list}")
                 if word == inner_list[0]:
                     found = True
                     inner_list[1] += 1
@@ -55,12 +51,8 @@ def non_uniform_sample(histogram): # create non-uniform sample function
     random_num = random.randint(0, words_frequency-1) # generate random number
     count = 0 # create count var
     for word, freq in histogram.items(): # loop through hist.items
-        # print(f"Word: {word}")
-        # print(f"Count: {count}" )
-        # print(f"Random number: {random_num}")
         count += freq # increment count by frequency
         if random_num < count: # check if random_num is less than count
-            # print("Found")
             return word # return word
 
 hist = histogram(source_text)
