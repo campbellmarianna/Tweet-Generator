@@ -2,7 +2,6 @@
 import random, sys
 from datetime import datetime
 
-
 start_time = datetime.now()
 # Capture the input from the terminal
 words = sys.argv[1:]

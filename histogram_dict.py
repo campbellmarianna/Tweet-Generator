@@ -15,7 +15,7 @@ has the potential to spur creative solutions to meet the needs of our world whil
 kingdom of shalom."""
 
 def histogram(source_text):
-    histogram = dict()
+    histogram = dict() #Issue: histogram scoped to this function - might need to be global
     words_list = source_text.split(" ")
     # print(words_list)
     for word in words_list:
@@ -35,7 +35,7 @@ def unique_words(histogram):
     # print(histogram)
     counter = 0
     # loop through keys
-    for k, v in histogram.items():
+    for k, v in histogram.items(): #What is going on with k + v (non-conventional)
         # print(f"The key is: {k}")
         # check if key's value is equal to one
         if histogram[k] is 1:
@@ -56,10 +56,10 @@ A frequency() function that takes a word and histogram argument and returns the 
 def frequency(word, histogram):
     counter = 0
     # loop through dict
-    for k,v in histogram.items():
-        # print(f"This should be a word. It is {k}")
-        # print(f"{v}")
-        #check if the word is the same as the source word and that the key's value is more than one
+    for k,v in histogram.items(): #Use of k and v again
+    # print(f"This should be a word. It is {k}")
+    # print(f"{v}")
+    #check if the word is the same as the source word and that the key's value is more than one
         if word == k and v > 1:
             # print(f"This should be a word that repeats in the source text. It is {k}")
             # increment counter by key's value

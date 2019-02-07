@@ -25,3 +25,8 @@ Idea for Random Dictionary Words - add a sanitize function
 Plain text sources:
 1) http://www.academia.edu/3216604/Biblical_Principles_for_a_Christian_Engineering_Entrepreneur
 2) https://archive.org/stream/ost-chemistry-environmental-chemistry/Environmental%20Chemistry_djvu.txt
+
+# Figure out what you need to do for the next portion of project
+    # Write a function that takes a histogram and returns a single word, at random.
+    # Then use relative probabilities to generate the singel word.
+    # Figure out steps then go over it with someone
