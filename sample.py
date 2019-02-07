@@ -1,4 +1,5 @@
 import random
+from pprint import pprint
 
 source_text = "one fish two fish red fish blue fish"
 
@@ -24,16 +25,18 @@ def sample(histogram): # create function with params histogram
     return words_list[word_index] # return the words_list element at that index
 
 def automate_sample(histogram): # create function automate_test
-    counter = 10 # create counter equal to 10
+    counter = 10000 # create counter equal to 10
     hist_list = list() # create a hist_list
     while counter > 0: # create a while loop with condition counter > 0
-        word = non_uniform_sample(histogram) # do prior psuedocode
+        word = non_uniform_sample(histogram)
+        # print(f"Word: {word}")
         found = False
         if len(hist_list) == 0:
             hist_list.append([word, 1]) # append returning value to hist_list
         else: # do hist_logic
             for inner_list in hist_list: # loop through hist_list
-                if word in inner_list[0]:
+                # print(f"Inner list: {inner_list}")
+                if word == inner_list[0]:
                     found = True
                     inner_list[1] += 1
                     break
@@ -46,23 +49,22 @@ def non_uniform_sample(histogram): # create non-uniform sample function
     """
     Generate a random word based on non-uniform distribution
     """
-    # print(histogram)
     words_frequency = 0 # create words_frequency
     for key, value in histogram.items(): # loop through histogram
-        print(f"Print value before added to word_freqency: { value}")
         words_frequency += value # append word to words_frequency
-    # print(words_frequency)
-    random_num = random.randint(1, words_frequency) # generate random number
-    # print(random_num)
+    random_num = random.randint(0, words_frequency-1) # generate random number
     count = 0 # create count var
     for word, freq in histogram.items(): # loop through hist.items
-        print(f"Print freq before adding it to count: {freq}")
+        # print(f"Word: {word}")
+        # print(f"Count: {count}" )
+        # print(f"Random number: {random_num}")
         count += freq # increment count by frequency
         if random_num < count: # check if random_num is less than count
+            # print("Found")
             return word # return word
 
 hist = histogram(source_text)
 
-# print(automate_sample(hist))
+pprint(automate_sample(hist))
 
-print(non_uniform_sample(hist))
+# pprint(non_uniform_sample(hist))
