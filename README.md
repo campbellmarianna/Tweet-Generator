@@ -20,10 +20,10 @@ To learn more about data structures and algorithms I will be completing the foll
 - [x] Page 2: Random Dictionary Words
 - [ ] Develop Bonus challenges
 - [ ] Check out Python resources
-- [ ] Page 3: Analyze Word Frequency in Text
+- [x] Page 3: Analyze Word Frequency in Text
 - [ ] Design, code and ship stretch challenges
 - [ ] Check out Resources
-- [ ] Page 4: Stochastic Sampling
+- [x] Page 4: Stochastic Sampling
 - [ ] Develop stretch challenges
 - [ ] Check out resources
 - [ ] Page 5: Flask Web App
