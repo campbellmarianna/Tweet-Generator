@@ -1,4 +1,4 @@
-# This code randomly rearranges a set of words provided as command-line arguments to the script.
+# This code randomly .
 import random, sys
 from datetime import datetime
 
@@ -7,7 +7,9 @@ start_time = datetime.now()
 words = sys.argv[1:]
 
 def rearrange_words():
-
+    """
+    A function that randomly rearranges a set of words provided as command-line arguments to the script 
+    """
     # Run a loop that runs for how many elements in the list
     for w in range(0, len(words)):
         # pair random index with list
