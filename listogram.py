@@ -25,39 +25,48 @@ class Listogram(list):
         # word_index = 2
         # print(f"Word Index: {word_index}")
         # word = [word, freq]
-        # Inspired by Jackson Ho
-        # found = value
-        # loop through self
-            # check if element string is equal to word (passed in)
-            # create temporary count equal to element freq plus count
-            # remove element
-            # append new element with word and temp count
-        for index, value in enumerate(self):
-            if word == value[0]:
+        found = False # Inspired by Jackson Ho
+        for word_count in self: # loop through self
+            if word_count[0] == word: # check if element string is equal to word (passed in)
                 # word is in list - you have seen this word before
-                num = value[1] + count
-                self.pop(index)
-                self.append((word, num))
+                temp_count = word_count[1] + count # create temporary count equal to element freq plus count
+                self.remove(word_count)# remove element
+                self.append((word, temp_count))# append new element with word and temp count
                 self.tokens += count
+                found = True # set found to True
                 break
-            else:
-                 # word is not in dictionary - you have not seen this word before
-                self.append((word, count))
-                self.types += 1
-                self.tokens += count
+        if not found: # if not found
+            # word is not in dictionary - you have not seen this word before
+            self.append((word, count))# append word and count in a tuple
+            self.types += 1 # increment types by 1
+            self.tokens += count # increment tokens by count
     def frequency(self, word):
         """Return frequency count of given word, or 0 if word is not found."""
         # TODO: Retrieve word frequency count
+        for word_count in self: # loop through self
+            if word_count[0] == word: # if element is eqaul to self
+                return word_count[1] # return the frequency of that element
+
+        return 0 # return 0
 
     def __contains__(self, word):
         """Return boolean indicating if given word is in this histogram."""
         # TODO: Check if word is in this histogram
+        for word_count in self: # loop through self
+            if word_count[0] == word: # check if element word is eqaul to self
+                return True # return True
+
+        return False
 
     def _index(self, target):
         """Return the index of entry containing given target word if found in
         this histogram, or None if target word is not found."""
         # TODO: Implement linear search to find index of entry with target word
-
+        for index in self: # loop through self
+            if index == target: # check if element is equal to target
+                return index # return index
+            else: # otherwise
+                return 'None' # return None
 
 def print_histogram(word_list):
     print('word list: {}'.format(word_list))
