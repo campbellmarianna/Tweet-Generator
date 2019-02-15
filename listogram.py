@@ -20,7 +20,31 @@ class Listogram(list):
     def add_count(self, word, count=1):
         """Increase frequency count of given word by given count amount."""
         # TODO: Increase word frequency by count
-
+        # self = []
+        # word = 'how'
+        # word_index = 2
+        # print(f"Word Index: {word_index}")
+        # word = [word, freq]
+        # Inspired by Jackson Ho
+        # found = value
+        # loop through self
+            # check if element string is equal to word (passed in)
+            # create temporary count equal to element freq plus count
+            # remove element
+            # append new element with word and temp count
+        for index, value in enumerate(self):
+            if word == value[0]:
+                # word is in list - you have seen this word before
+                num = value[1] + count
+                self.pop(index)
+                self.append((word, num))
+                self.tokens += count
+                break
+            else:
+                 # word is not in dictionary - you have not seen this word before
+                self.append((word, count))
+                self.types += 1
+                self.tokens += count
     def frequency(self, word):
         """Return frequency count of given word, or 0 if word is not found."""
         # TODO: Retrieve word frequency count

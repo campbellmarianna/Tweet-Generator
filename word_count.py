@@ -54,6 +54,9 @@ def listogram(source_text):
                 nested_list.append([word, 1])
     return nested_list
 
+list =(listogram(source_text))
+print(list)
+
 
 #histogram_tuple
 def tupogram(source_text): # Inspired by Jackson Ho
@@ -126,5 +129,3 @@ def frequency(word, histogram):
             # increment counter by key's value
                 counter += v
     return counter
-
-histogram(source_text)
