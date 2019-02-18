@@ -56,17 +56,26 @@ class LinkedList(object):
         """Return the length of this linked list by traversing its nodes.
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all nodes and count one for each
+        count = 0 # create count set it to 0
+        node = self.head # set node to self.node
+        while node is not None: # loop through nodes
+            count += 1 # increment cout by one
+        return count # return count
 
     def append(self, item):
         """Insert the given item at the tail of this linked list.
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Create new node to hold given item
+        node = Node(item)
         # TODO: Append node after tail, if it exists
+        if self.tail is not None:
+            node = self.tail.next
 
     def prepend(self, item):
         """Insert the given item at the head of this linked list.
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Create new node to hold given item
+        node = Node(item)
         # TODO: Prepend node before head, if it exists
 
     def find(self, quality):
@@ -85,6 +94,11 @@ class LinkedList(object):
         # TODO: Otherwise raise error to tell user that delete has failed
         # Hint: raise ValueError('Item not found: {}'.format(item))
 
+# Custom Testing
+# produce_data = {'fruit':'peaces'}
+# produce = LinkedList(produce_data)
+# print(produce.items())
+# print(f"LinkedList: {produce.items()} ")
 
 def test_linked_list():
     ll = LinkedList()
