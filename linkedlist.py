@@ -76,11 +76,11 @@ class LinkedList(object):
         #     self.head = new_node #self.head = new_node # set the head node to the new node
         # self.tail = new_node # in any case the new node will be the last node
         if self.head is None: # check if head is None
-            self.tail = new_node # set tail to new node
             self.head = new_node # set head to new node
+            self.tail = new_node # set tail to new node
         else: # otherwise
             self.tail.next = new_node # set tail next to new_node
-            self.tail = self.tail.next # set tail to tail next
+            self.tail = new_node # set tail to tail next
         # try:
         #     self.tail
         # except NameError:
@@ -98,14 +98,14 @@ class LinkedList(object):
             self.head = new_node # set head to new node
             self.tail = new_node # set tail to new node
         else: # otherwise
-            self.head = self.head.next # set head to the head.next
-            self.head = new_node # set head to new node
+            new_node.next = self.head
+            self.head = new_node
 
     # def quality(self, item):
     #     if item < 1:
     #         return True
     #     else:
-    #         return False
+    #         return False1
 
     def find(self, quality):
         """Return an item from this linked list satisfying the given quality.
