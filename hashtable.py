@@ -105,7 +105,7 @@ class HashTable(object):
         new_entry = (key, value)
         # Check if key-value entry exists in bucket
         if bucket_entry is not None: # Found entry
-            bucket.delete(entry) # TODO: If found, update value associated with given key
+            bucket.delete(bucket_entry) # TODO: If found, update value associated with given key
             bucket.append(new_entry)
         else: #Otherwise, insert given key-value entry into bucket
             bucket.append(new_entry)
@@ -114,11 +114,15 @@ class HashTable(object):
     def delete(self, key):
         """Delete the given key from this hash table, or raise KeyError.
         TODO: Running time: O(???) Why and under what conditions?"""
-        # TODO: Find bucket where given key belongs
-        # TODO: Check if key-value entry exists in bucket
-        # TODO: If found, delete entry associated with given key
-        # TODO: Otherwise, raise error to tell user delete failed
-        # Hint: raise KeyError('Key not found: {}'.format(key))
+        # Find bucket where given key belongs
+        index = self._bucket_index(key)
+        bucket = self.buckets[index]
+        bucket_entry = bucket.find(lambda key_value: key_value[0] == key)
+        # Check if key-value entry exists in bucket
+        if bucket_entry is not None:
+            bucket.delete(bucket_entry) # If found, delete entry associated with given key
+        else: # Otherwise, raise error to tell user delete failed
+            raise KeyError('Key not found: {}'.format(key)) # Hint: 
 
 
 def test_hash_table():

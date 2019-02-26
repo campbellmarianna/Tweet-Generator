@@ -30,3 +30,9 @@ Plain text sources:
     # Write a function that takes a histogram and returns a single word, at random.
     # Then use relative probabilities to generate the singel word.
     # Figure out steps then go over it with someone
+
+Lambda functions: 
+    - Magic with `lambda`: `entry = bucket.find(lambda key_value: key_value[0] == key)`
+
+Really Helpful Terminal Commands:
+    - Run one unit test: `pytest hashtable_test.py::HashTableTest::test_contains`
