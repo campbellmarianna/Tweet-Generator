@@ -26,7 +26,7 @@ class HashTable(object):
 
     def keys(self):
         """Return a list of all keys in this hash table.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        Running time: O(b + n) for b buckets in the LinkedList because we have to iterate over all b buckets, iterate over all the n nodes and append the key for each"""
         # Collect all keys in each bucket
         all_keys = []
         for bucket in self.buckets:
@@ -36,7 +36,7 @@ class HashTable(object):
 
     def values(self):
         """Return a list of all values in this hash table.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        Running time: O(b + n) for b buckets in the LinkedList because we have to iterate over all b buckets, iterate over all the n nodes and append the value for each"""
         all_values = []
         # Loop through all buckets
         for bucket in self.buckets:
@@ -47,7 +47,8 @@ class HashTable(object):
 
     def items(self):
         """Return a list of all items (key-value pairs) in this hash table.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        Best and worst case running time: O(n) for n buckets in the array
+        because we always need to loop through all n buckets to get there items."""
         # Collect all pairs of key-value entries in each bucket
         all_items = []
         for bucket in self.buckets:
@@ -56,7 +57,7 @@ class HashTable(object):
 
     def length(self):
         """Return the number of key-value entries by traversing its buckets.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        Running time: O(n) for n LinkedList in the array because we have to iterate over all n LinkedList and get the length for each"""
         count = 0
         # Loop through all buckets
         for bucket in self.buckets:
@@ -66,7 +67,7 @@ class HashTable(object):
 
     def contains(self, key):
         """Return True if this hash table contains the given key, or False.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        Running time: O(n + i) for n nodes in the LinkedList because we have to iterate over all n nodes, iterate over all the i items and check to see whose data matches the given key """
         # Find bucket where given key belongs
         index = self._bucket_index(key)
         bucket = self.buckets[index]
@@ -83,7 +84,7 @@ class HashTable(object):
 
     def get(self, key):
         """Return the value associated with the given key, or raise KeyError.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        Running time: O(n + i) for n nodes in the LinkedList because we have to iterate over all n nodes, iterate over all the i items and check to see whose data matches the given key"""
         # Find bucket where given key belongs
         bucket = self.buckets[self._bucket_index(key)]
         entry = bucket.find(lambda key_value: key_value[0] == key)
@@ -97,7 +98,7 @@ class HashTable(object):
 
     def set(self, key, value):
         """Insert or update the given key with its associated value.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        Running time: O(n + i) for n nodes in the LinkedList because we have to iterate over all n nodes, iterate over all the i items and check to see whose data matches the given key"""
         # Find bucket where given key belongs
         index = self._bucket_index(key)
         bucket = self.buckets[index]
@@ -113,7 +114,7 @@ class HashTable(object):
 
     def delete(self, key):
         """Delete the given key from this hash table, or raise KeyError.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        Running time: O(n + i) for n nodes in the LinkedList because we have to iterate over all n nodes, iterate over all the i items and check to see whose data matches the given key"""
         # Find bucket where given key belongs
         index = self._bucket_index(key)
         bucket = self.buckets[index]
@@ -122,7 +123,7 @@ class HashTable(object):
         if bucket_entry is not None:
             bucket.delete(bucket_entry) # If found, delete entry associated with given key
         else: # Otherwise, raise error to tell user delete failed
-            raise KeyError('Key not found: {}'.format(key)) # Hint: 
+            raise KeyError('Key not found: {}'.format(key)) # Hint:
 
 
 def test_hash_table():
