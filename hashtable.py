@@ -86,19 +86,20 @@ class HashTable(object):
         """Return the value associated with the given key, or raise KeyError.
         Running time: O(n + i) for n nodes in the LinkedList because we have to iterate over all n nodes, iterate over all the i items and check to see whose data matches the given key"""
         # Find bucket where given key belongs
-        bucket = self.buckets[self._bucket_index(key)]
-        entry = bucket.find(lambda key_value: key_value[0] == key)
+        bucket = self.buckets[self._bucket_index(key)] # 0(1) to calculate index
+        # the lambda is a closure because it is cpaturing around a function in the outer scope ()
+        entry = bucket.find(lambda key_value: key_value[0] == key) # 0(1) to index an array
         # Check if key-value entry exists in bucket
         if entry is not None: # Found entry
             # If found, return value associated with given key
-            return entry[1] # Get the value only at index 1
+            return entry[1] # entry = (key, value)
         # Otherwise, raise error to tell user get failed
         else:
             raise KeyError('Key not found: {}'.format(key))
 
     def set(self, key, value):
         """Insert or update the given key with its associated value.
-        Running time: O(n + i) for n nodes in the LinkedList because we have to iterate over all n nodes, iterate over all the i items and check to see whose data matches the given key"""
+        Running time: O(n + i) for n nodes in the LinkedList because we have to iterate over all n nodes, iterate over all the i items and check to see whose data matches the given key In class: Best case O(1) item is located near head of list. Otherwise O(l) (find) + O(l) (delete) = O(2*1) simplifies to O(l) if item is near tail of list"""
         # Find bucket where given key belongs
         index = self._bucket_index(key)
         bucket = self.buckets[index]
@@ -106,11 +107,8 @@ class HashTable(object):
         new_entry = (key, value)
         # Check if key-value entry exists in bucket
         if bucket_entry is not None: # Found entry
-            bucket.delete(bucket_entry) # TODO: If found, update value associated with given key
-            bucket.append(new_entry)
-        else: #Otherwise, insert given key-value entry into bucket
-            bucket.append(new_entry)
-        # bucket.append(entry)
+            bucket.delete(bucket_entry) # O(l) in worst case
+        bucket.append(new_entry)
 
     def delete(self, key):
         """Delete the given key from this hash table, or raise KeyError.
