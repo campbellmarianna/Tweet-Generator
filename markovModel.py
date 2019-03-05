@@ -30,20 +30,11 @@ def generate_random_start(model):
     print('MODEL: {}'.format(model))
     for k, v in model.items():
         for inner_key, inner_value in v.items():
-
             if inner_key == 'END':
-                print('FOUND END')
-            # if v == 'END':
-    # if 'END' in model:
-                print("here 2 ????????????????")
-        # print("here 2 ????????????????")
-        # seed_word = 'END'
                 seed_word = 'END'
                 while seed_word == 'END':
-                    hist = {'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1}
                     seed_word = non_uniform_sample(v)
                 return seed_word
-            # return random.choice(model.keys())
 
 def generate_random_sentence(length, markov_model):
     current_word = generate_random_start(markov_model)
@@ -53,10 +44,8 @@ def generate_random_sentence(length, markov_model):
         current_dictogram = markov_model[current_word]
         print("****** Cur dictogram: {}".format(current_dictogram))
         random_weighted_word = non_uniform_sample(current_dictogram)
-        print("****** random_weighted_word: {}".format(random_weighted_word))
         if random_weighted_word == 'END':
-            sentence[0] = sentence[0].capitalize()
-            return ' '.join(sentence) + '.'
+            break
         current_word = random_weighted_word
         sentence.append(current_word)
     sentence[0] = sentence[0].capitalize()
