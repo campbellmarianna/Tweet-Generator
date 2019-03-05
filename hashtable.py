@@ -2,7 +2,7 @@
 
 from linkedlist import LinkedList
 
-
+# jumping to the right LinkedList using the hash code is the key feature of a Hash Table
 class HashTable(object):
 
     def __init__(self, init_size=8):
@@ -10,7 +10,7 @@ class HashTable(object):
         # Create a new list (used as fixed-size array) of empty linked lists
         self.buckets = [LinkedList() for _ in range(init_size)]
 
-    def __str__(self):
+    def __str__(self): # magic method # method
         """Return a formatted string representation of this hash table."""
         items = ['{!r}: {!r}'.format(key, val) for key, val in self.items()]
         return '{' + ', '.join(items) + '}'
@@ -60,9 +60,10 @@ class HashTable(object):
         Running time: O(n) for n LinkedList in the array because we have to iterate over all n LinkedList and get the length for each"""
         count = 0
         # Loop through all buckets
-        for bucket in self.buckets:
-            count += bucket.length()
+        for bucket in self.buckets: # b iterations
+            count += bucket.length() # 0(l)
         return count
+        # Overall: 0(b * l) --> 0(n)
 
 
     def contains(self, key):
@@ -114,14 +115,15 @@ class HashTable(object):
         """Delete the given key from this hash table, or raise KeyError.
         Running time: O(n + i) for n nodes in the LinkedList because we have to iterate over all n nodes, iterate over all the i items and check to see whose data matches the given key"""
         # Find bucket where given key belongs
-        index = self._bucket_index(key)
-        bucket = self.buckets[index]
-        bucket_entry = bucket.find(lambda key_value: key_value[0] == key)
+        index = self._bucket_index(key) # 0(1) #very fast mutiple the index by # array method 0(1)
+        bucket = self.buckets[index] #0(1)
+        bucket_entry = bucket.find(lambda key_value: key_value[0] == key) # 0(l)
         # Check if key-value entry exists in bucket
         if bucket_entry is not None:
-            bucket.delete(bucket_entry) # If found, delete entry associated with given key
+            bucket.delete(bucket_entry) # 0(l) # If found, delete entry associated with given key # delete method is scoped to LinkedList object
         else: # Otherwise, raise error to tell user delete failed
             raise KeyError('Key not found: {}'.format(key)) # Hint:
+        # Overall 0(3 + 2l) --> 0(l)
 
 
 def test_hash_table():
