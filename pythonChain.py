@@ -1,6 +1,6 @@
 # Notes from Poetry in Python: Using Markov Chains to Generate Texts by Omer Nevo
 # Source: https://www.youtube.com/watch?v=-51qWZdA8zM
-
+# Stopped at  13:30/3
 # training - count of many times a word appears
 # keep track of probability
 #look at how many words appear after the words before it

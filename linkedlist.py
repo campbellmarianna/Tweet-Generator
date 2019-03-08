@@ -115,14 +115,14 @@ class LinkedList(object):
         """Return an item from this linked list satisfying the given quality.
         Best case running time: O(n)and worst case running time: O(n) if the item is near the tail of the list or not present and we need to loop through all n nodes in the list."""
         # Loop through all nodes to find item where quality(item) is True
-        node = self.head
-        while node is not None:
-            # Check if node's data satisfies given quality function
-            if quality(node.data):
-                return node.data
-            else:
-                node = node.next
-        return None
+        node = self.head # 0(1)
+        while node is not None: # O(n)
+            if quality(node.data): # Check if node's data satisfies given quality function # O(1)
+                return node.data # O(1)
+            else: # O(1)
+                node = node.next # O(1)
+        return None # O(1)
+        # Overall: 0(n)
 
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError.
