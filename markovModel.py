@@ -54,5 +54,5 @@ def generate_random_sentence(length, markov_model):
 
 
 model = make_markov_model(texts_list)
-pprint(model)
+# pprint(model)
 # pprint(generate_random_sentence(4, model))

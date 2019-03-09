@@ -57,7 +57,7 @@ class LinkedList(object):
     def length(self):
         """Return the length of this linked list by traversing its nodes.
         Running time: O(n) for n nodes in the list because we have to iterate over all n nodes and count 1 for each"""
-        return self.size
+        # return self.size
         count = 0 # create count set it to 0
         node = self.head # set node to self.node
         # Loop through all nodes and count one for each
